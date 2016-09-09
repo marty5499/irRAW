@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <script src="bower_components/webduino-js/dist/webduino-all.js"></script>
+    <script src="irRAW.js"></script>
+    <script>
+    var board, led, ir;
+    board = new webduino.WebArduino('evo9');
+    board.on(webduino.BoardEvent.READY, function() {
+        ir = new IR(board, 10, 14);  /* send , recv */
+    });
+    board.on(webduino.BoardEvent.ERROR, function(err) {
+        console.log('board error', err.message);
+    });
+    board.on(webduino.BoardEvent.BEFOREDISCONNECT, function() {
+        console.log('board beforedisconnect');
+    });
+    board.on(webduino.BoardEvent.DISCONNECT, function() {
+        console.log('board disconnect');
+        // test: should not emit 'disconnect' again
+        board.disconnect();
+    });
+    </script>
+</head>
+
+<body>
+    <input id='record' type='button' value="Record"></input>
+    <input id='fire' type='button' value="Fire"></input>
+    <br> RAW IR
+    <div id='msg'></div>
+    <textarea id='txt' rows="15" cols="128"></textarea>
+    <script>
+    var irData;
+    record.addEventListener("click", function() {
+        msg.innerHTML = "record IR signal";
+        txt.value = '';
+        ir.recv(function(data) {
+            irData = data;
+            console.log("irData,length (", data.length, ")", data);
+            txt.value = data;
+            msg.innerHTML = "OK,length:" + data.length;
+        });
+    });
+    fire.addEventListener("click", function() {
+        console.log("fire...");
+        msg.innerHTML = "fire...";
+        ir.send(irData, function() {
+            msg.innerHTML = "fire...OK";
+        });
+    });
+    txt.addEventListener("keyup", function() {
+        irData = txt.value;
+    });
+    </script>
+</body>
+
+</html>

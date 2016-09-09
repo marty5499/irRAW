@@ -1,0 +1,20 @@
+{
+  "name": "irRAW",
+  "main": "index.html",
+  "authors": [
+    "marty <marty.shu@gmail.com>"
+  ],
+  "description": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webduino-js": "^0.4.7"
+  }
+}
