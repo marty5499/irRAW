@@ -297,7 +297,7 @@
         controllerBtnEvent(getElement("#demo-area-09 .btn-play"), "click", function() {
             document.querySelector("#demo-area-09 .btn-show").innerHTML = '發射紅外線...' + irData.length;
             ir.send(irData, function() {
-                document.querySelector("#demo-area-09 .btn-show").innerHTML = '發射'
+                document.querySelector("#demo-area-09 .btn-show").innerHTML = '發射完成'
             });
         });
 
