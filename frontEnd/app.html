@@ -289,7 +289,11 @@
         </div>
     </div>
     <script>
-    var board = new webduino.WebArduino("mVPL");
+    var deviceID = "mVPL";
+    if (location.hash.length == 5) {
+        deviceID = location.hash.substring(1);
+    }
+    var board = new webduino.WebArduino(deviceID);
     var ir, irData;
     board.on("ready", function(board) {
         ir = new IR(board, 12, 14);
