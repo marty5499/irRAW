@@ -1,0 +1,18 @@
+<html>
+
+<head>
+    <script src="bower_components/webduino-js/dist/webduino-all.js"></script>
+</head>
+
+<body>
+    <script>
+    var led;
+    var board = new webduino.WebArduino("mVPL");
+    board.on("ready", function(board) {
+        led = new webduino.module.Led(board, board.getDigitalPin(13));
+        led.blink(200);
+    });
+    </script>
+</body>
+
+</html>

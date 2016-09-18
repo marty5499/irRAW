@@ -1,0 +1,18 @@
+<html>
+<head>
+    <script src="bower_components/webduino-js/dist/webduino-all.js"></script>
+    <script src="irRAW.js"></script>
+</head>
+<body>
+    <script>
+    var board = new webduino.WebArduino("mVPL");
+    board.on("ready", function(board) {
+        var ir = new IR(board, 12, 14);
+        data = "...";
+        ir.send(data,function() {
+            console.log('send OK.');
+        });
+    });
+    </script>
+</body>
+</html>

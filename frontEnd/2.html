@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <script src='bower_components/webcomponentsjs/webcomponents.js'></script>
+    <link rel='import' href='bower_components/webduino/web-arduino.html'></link>
+    <link rel='import' href='bower_components/webduino/wa-led.html'></link>
+</head>
+
+<body>
+    <web-arduino id='board' device='mVPL'>
+        <wa-led id='led' pin='13' state="on"></wa-led>
+    </web-arduino>
+</body>
+<script>
+window.addEventListener("WebComponentsReady", function() {
+    board = document.getElementById('board');
+    led = document.getElementById('led');
+    board.on("ready", function() {
+        led.blink(1000);
+    });
+});
+</script>
+
+</html>
