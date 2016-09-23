@@ -1,0 +1,13 @@
+{
+  "name": "paho",
+  "homepage": "https://github.com/webduinoio/org.eclipse.paho.mqtt.javascript",
+  "_release": "34e12dbb90",
+  "_resolution": {
+    "type": "branch",
+    "branch": "develop",
+    "commit": "34e12dbb90a4cb68dd2d756149db678e60d1913a"
+  },
+  "_source": "git://github.com/webduinoio/org.eclipse.paho.mqtt.javascript.git",
+  "_target": "develop",
+  "_originalSource": "webduinoio/org.eclipse.paho.mqtt.javascript"
+}

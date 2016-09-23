@@ -1,0 +1,18 @@
+{
+  "name": "chrome-api-proxy",
+  "description": "Leverage Chrome App APIs in Normal Web Pages",
+  "license": "MIT",
+  "dependencies": {
+    "json-human": "*"
+  },
+  "homepage": "https://github.com/webduinoio/chrome-api-proxy",
+  "_release": "cb86e6e924",
+  "_resolution": {
+    "type": "branch",
+    "branch": "gh-pages",
+    "commit": "cb86e6e9246ce7e98d12f5aec758ff14d9683735"
+  },
+  "_source": "git://github.com/webduinoio/chrome-api-proxy.git",
+  "_target": "gh-pages",
+  "_originalSource": "webduinoio/chrome-api-proxy"
+}
