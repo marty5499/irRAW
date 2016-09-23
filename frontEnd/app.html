@@ -289,10 +289,10 @@
         </div>
     </div>
     <script>
-    var board = new webduino.WebArduino("GLK7");
+    var board = new webduino.WebArduino("evo9");
     var ir, irData;
     board.on("ready", function(board) {
-        ir = new IR(board, 12, 14);
+        ir = new IR(board, 10, 6);
         document.querySelector("#demo-area-09 .btn-show").innerHTML = '開發板完成連線';
         controllerBtnEvent(getElement("#demo-area-09 .btn-play"), "click", function() {
             document.querySelector("#demo-area-09 .btn-show").innerHTML = '發射紅外線...' + irData.length;

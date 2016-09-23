@@ -1,0 +1,95 @@
+{
+    "project": {
+        "name": "webduino-js",
+        "description": "The Webduino Javascript Core, for Browser and Node.js",
+        "version": "0.4.8",
+        "url": "https://webduino.io/"
+    },
+    "files": {
+        "src/irRAW.js": {
+            "name": "src/irRAW.js",
+            "modules": {},
+            "classes": {
+                "IR": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "IR": {
+            "name": "IR",
+            "shortname": "IR",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/irRAW.js",
+            "line": 17,
+            "description": "A utility that IR controller...",
+            "since": "0.1",
+            "is_constructor": 1
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "src/irRAW.js",
+            "line": 103,
+            "description": "Receiver Remote Controller Data to JS",
+            "itemtype": "method",
+            "name": "recv",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "",
+                    "type": "Callback"
+                }
+            ],
+            "class": "IR"
+        },
+        {
+            "file": "src/irRAW.js",
+            "line": 113,
+            "description": "Send IR Data to Webduino board",
+            "itemtype": "method",
+            "name": "send",
+            "params": [
+                {
+                    "name": "IR",
+                    "description": "Data",
+                    "type": "String"
+                },
+                {
+                    "name": "after",
+                    "description": "send IR data",
+                    "type": "Callback"
+                }
+            ],
+            "class": "IR"
+        },
+        {
+            "file": "src/irRAW.js",
+            "line": 124,
+            "description": "on/off debug message",
+            "itemtype": "method",
+            "name": "debug",
+            "params": [
+                {
+                    "name": "true/false",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "IR"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Fixing missing name for callback",
+            "line": " src/irRAW.js:103"
+        }
+    ]
+}

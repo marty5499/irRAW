@@ -14,11 +14,18 @@
         }
     }
 
+    /**
+     * A utility that IR controller...
+     * @since 0.1
+     * @class IR
+     * @constructor
+     */
     function IR(board, irSend, irRecv) {
         this._board = board;
         this.pinSendIR = irSend;
         this.pinRecvIR = irRecv;
         this.isDebug = true;
+        board.getDigitalPin(irRecv).setMode(0);
         self = this;
         board.on(webduino.BoardEvent.SYSEX_MESSAGE, function(event) {
             var m = event.message;
@@ -94,11 +101,22 @@
         }
     });
 
+    /**
+     * Receiver Remote Controller Data to JS
+     * @method recv
+     * @param {Callback function}
+     */
     proto.recv = function(callback) {
         self.irRecvCallback = callback;
         board.send([0xF0, 0x04, 0x09, 0x0D, self.pinRecvIR, 0xF7]);
     };
 
+    /**
+     * Send IR Data to Webduino board
+     * @method send
+     * @param {String} IR Data
+     * @param {callback} after send IR data
+     */
     proto.send = function(data, callback) {
         sendIRCmd(data, sendLen);
         self.irSendCallback = callback;
