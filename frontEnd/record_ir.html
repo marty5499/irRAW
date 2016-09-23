@@ -5,10 +5,10 @@
 </head>
 <body>
     <script>
-    var board = new webduino.WebArduino("mVPL");
+    var board = new webduino.WebArduino("GLK7");
     var ir;
     board.on("ready", function(board) {
-        ir = new IR(board, 7, 14);
+        ir = new IR(board, 12, 14);
         ir.recv(function(data) {
             console.log('data', data);
         });
