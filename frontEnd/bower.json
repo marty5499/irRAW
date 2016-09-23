@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "webduino-js": "^0.4.8"
+    "webduino-js": "^0.4.8",
+    "webduino": "^0.3.2"
   }
 }
